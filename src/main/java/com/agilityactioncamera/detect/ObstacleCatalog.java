@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2018, SomeoneWithAnInternetConnection
- * Copyright (c) 2026, ottop
+ * Copyright (c) 2026, pixunen
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
