@@ -21,7 +21,6 @@ import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
-import net.runelite.client.ui.overlay.OverlayPriority;
 
 /**
  * Animated letterbox bars and vignette over the 3D viewport. Drawn under
@@ -48,7 +47,7 @@ public class LetterboxOverlay extends Overlay
 		this.config = config;
 		setPosition(OverlayPosition.DYNAMIC);
 		setLayer(OverlayLayer.ABOVE_SCENE);
-		setPriority(OverlayPriority.HIGH);
+		setPriority(PRIORITY_HIGH);
 	}
 
 	@Override
