@@ -54,6 +54,8 @@ public class TraversalDetectorTest
 		assertEquals(Transition.ENDED, detector.onTick(sample(14, 0, 14, 0, -1, IDLE)));
 		assertFalse(detector.isLastEndAborted());
 		assertFalse(detector.isTraversing());
+		// Started on tick 102 and landed on 105, not when the detector noticed on 107
+		assertEquals(3, detector.getLandingTick() - t.getStartTick());
 	}
 
 	@Test

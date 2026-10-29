@@ -92,6 +92,12 @@ public final class TraversalDetector
 	private Traversal current;
 	@Getter
 	private boolean lastEndAborted;
+	/**
+	 * The first tick of the run of normal movement that ended the last
+	 * traversal: when the player actually landed.
+	 */
+	@Getter
+	private int landingTick;
 
 	/**
 	 * Called when the player clicks a game object.
@@ -267,6 +273,10 @@ public final class TraversalDetector
 		// Over once the player is back to plain standing, walking or running for a
 		// moment; they don't have to stop, since courses are run without stopping
 		settledTicks = normal ? settledTicks + 1 : 0;
+		if (settledTicks == 1)
+		{
+			landingTick = s.getTick();
+		}
 		if (settledTicks >= SETTLE_TICKS)
 		{
 			return end(false, s.getTick());

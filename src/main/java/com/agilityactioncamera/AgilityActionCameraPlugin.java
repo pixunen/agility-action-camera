@@ -343,10 +343,7 @@ public class AgilityActionCameraPlugin extends Plugin
 				Traversal t = detector.getCurrent();
 				if (!detector.isLastEndAborted())
 				{
-					// The detector ends a traversal only after the player has moved normally for a
-					// while; the landing was the first of those ticks
-					int landingTick = client.getTickCount() - normalTicks + 1;
-					durations.record(t.learnKey(), landingTick - t.getStartTick());
+					durations.record(t.learnKey(), detector.getLandingTick() - t.getStartTick());
 				}
 				eventBus.post(new TraversalEnded(t, detector.isLastEndAborted()));
 				break;
